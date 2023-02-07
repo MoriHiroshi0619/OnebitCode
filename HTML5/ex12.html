@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Liga Astronauta</title>
+    <style>
+        h1{
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cadastro da liga dos Astronautas</h1>
+    <form> 
+        <label for="nome">Nome: </label><input type="text" name="nome" id="nome" placeholder="Digite o nome...">
+        <br><br>
+        <label for="email">Email: </label><input type="email" id="email" name="email" placeholder="Digite o email..."> <span> - </span>
+        <label for="senha">Senha: </label><input type="password" id="senha" name="senha" placeholder="Digite a senha...">
+        <br><br>
+        <label for="nascimento">Data de nascimento: </label><input type="date" id="nascimento" name="nascimento"> <span> - </span>
+        <label for="foto">Foto: </label> <input type="file" id="foto" name="foto">
+        <br><br>
+        <label for="nacionalidade">Nacionalidade: </label> 
+        <select name="nacionalidade" id="nacionalidade">
+            <option value="brasil">Brasileiro</option>
+            <option value="china">Chinês</option>
+            <option value="america">Americano</option>
+            <option value="russia">Russo</option>
+            <option value="india">Indiano</option>
+        </select> <span> - </span>
+        <span>Genero: </span>
+        <label for="m">M </label>
+        <input type="radio" id="m" name="genero" checked>
+        <label for="f">F </label>
+        <input type="radio" id="f" name="genero"> <br> <br>
+        <span>Suas principais qualidades:</span> <br>
+        <label for="inte">Inteligência</label>
+        <input type="checkbox" id="inte" name="qualidades" value="inteligencia"> <span> | </span>
+        <label for="resi">Resiliência</label>
+        <input type="checkbox" id="resi" name="qualidades" value="resiliencia"> <span> | </span>
+        <label for="fisi">Preparo físico</label>
+        <input type="checkbox" id="fisi" name="qualidades" value="fisico"> <span> | </span>
+        <label for="edu">Educação</label>
+        <input type="checkbox" id="edu" name="qualidades" value="educacao"> <br>
+        <input type="text" id="motivo" name="motivo" placeholder="Porque você gostaria de ser um austronauta?" maxlength="300"> <br> <br>
+        <input type="submit" value="criar">
+    </form> 
+</body>
+</html>
