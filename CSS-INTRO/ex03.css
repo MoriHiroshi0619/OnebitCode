@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --fonteTitulo: 'Montserrat', sans-serif;
+    --fonteData: 'Roboto', sans-serif;
+    --fonteGeral: 'Open Sans', sans-serif;
+    --corPost: #fffafa;
+    --corData: #008080;
+}
+
+main{
+    background-color: var(--corPost);
+    width: 70vw;
+    margin: auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.279);
+}
+
+article{
+    padding: 40px 60px 40px 40px;
+    border-bottom: 1px rgba(0, 0, 0, 0.3) solid;
+}
+
+p{
+    font-family: var(--fonteGeral);
+    font-size: 00.9em;
+}
+
+.date{
+    color: var(--corData);
+    font-family: var(--fonteData);
+    font-size: 0.9em;
+}
+
+h1{
+    font-family: var(--fonteTitulo);
+    font-size: 2em;
+    margin: 20px 0px;
+}
