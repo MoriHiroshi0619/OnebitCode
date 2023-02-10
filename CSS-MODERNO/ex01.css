@@ -1,3 +1,11 @@
+body{
+    background-image: url('https://pt.wikipedia.org/wiki/Ficheiro:Aurora-SpaceShuttle-EO.jpg');
+    background-size: cover;
+}
+
+h1{
+    color: aqua;
+}
 
 li{
     color:brown;
