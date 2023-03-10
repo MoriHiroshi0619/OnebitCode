@@ -26,7 +26,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1 0 200px;
+    flex: 1 0 200px; /* grow, shring, basis */
     /* flex-basis: 200px; */ /* tamanho em que sera feito a quebra do flex-wrap */
     /* flex-grow: 1;  *//* por padrão é 0, mas se atribuir 1 cada item do container era tentar ocupar toda a witdh disponivel */
 }
