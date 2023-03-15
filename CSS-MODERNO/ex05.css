@@ -8,7 +8,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    
     flex-grow: 1;
 }
 
@@ -28,6 +28,7 @@ body{
 
 .content{
     /* align-content: center; */
+    margin: 10px;
     flex: 1 0 auto;
     display: grid;
     gap: 5px;
