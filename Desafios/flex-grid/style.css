@@ -8,10 +8,6 @@
     box-sizing: border-box;
 }
 
-.container *{
-    border: 1px solid red;
-}
-
 .container{
     min-height: 100vh;
     min-width: 100vw;
@@ -50,10 +46,6 @@
 }
 
 
-.main-content *{
-    border: 1px solid blue;
-}
-
 .main-content{
     flex: 1 0 400px;
 }
@@ -64,8 +56,12 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px;
 }
-
+.description p{
+    color: gray;
+}
 .content{
     display: flex;
 }
@@ -74,25 +70,50 @@
     display: grid;
     padding: 20px;
     gap: 10px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(350px, auto);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.main h2{
+    font-variant: small-caps;
+    font-size: 2rem;
+    text-align: center;
+}
 
+.main p{
+    font-size: .8rem;
+    font-weight: lighter;
+    padding: 5px;
+}
 
 .main img{
     aspect-ratio: 2/1.2;
     width: 100%;
     border-radius: 10px;
 }
+
+.item{
+    min-width: 230px;
+}
+
 .extra{
+    min-width: 230px;
+    grid-column: 4/5;
+    grid-row: 1/4;
     background-color: rgb(64, 64, 64);
     display: flex;
     padding: 20px;
+    border-radius: 20px;
     flex-direction: column;
     gap: 20px;
-    justify-content: space-evenly;
     align-items: center;
     color: aliceblue;
+}
+
+.extra h2{
+    text-align: center;
+    font-size: 1.3rem;
 }
 
 .extra img{
@@ -100,11 +121,25 @@
     width: 100%;
     border-radius: 8px;
 }
+.extra-container{
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .item-extra{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
+}
+
+.item-extra h3{
+    font-variant: small-caps;
+    font-size: 1.8rem;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 
@@ -126,7 +161,32 @@
     width: 20%;
 }
 
-hr{
-    border-top: 3px solid black;
+@media (max-width: 1000px){
+    .main{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .extra{
+        grid-column: 3/4;
+        grid-row: 2/5;
+    }
 }
 
+@media (max-width: 730px){
+    .main{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .extra{
+        grid-column: 2/3;
+        grid-row: 3/7;
+    }
+}
+
+@media (max-width: 530px){
+    .main{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .extra{
+        grid-column: 1/2;
+        grid-row: 10/11;
+    }
+}
