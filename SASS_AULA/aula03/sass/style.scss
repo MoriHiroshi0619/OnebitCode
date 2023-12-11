@@ -1,0 +1,44 @@
+$ul-backColor: rgb(116, 116, 230);
+$li-color: rgb(135, 248, 135);
+$div-bgColor: rgb(231, 221, 221);
+$btn-color: rgb(99, 252, 99);
+.class01{
+    border-radius: 20px;
+    padding: 20px;
+    background-color: $div-bgColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    ul{
+        background-color: $ul-backColor;
+        padding: 4px;
+        list-style: none;
+        text-align: center;
+    }
+    li{
+        color: $li-color;
+        font-size: 1.2rem;
+        margin: 5px;
+    }
+
+    button{
+        width: 140px;
+        text-align: center;
+        background-color: $btn-color;
+        outline: none;
+        border: none;
+        padding: 4px;
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: 1s;
+    
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}
+
+
+
+
+

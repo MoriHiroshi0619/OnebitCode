@@ -1,0 +1,35 @@
+.class01 {
+  border-radius: 20px;
+  padding: 20px;
+  background-color: rgb(231, 221, 221);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.class01 ul {
+  background-color: rgb(116, 116, 230);
+  padding: 4px;
+  list-style: none;
+  text-align: center;
+}
+.class01 li {
+  color: rgb(135, 248, 135);
+  font-size: 1.2rem;
+  margin: 5px;
+}
+.class01 button {
+  width: 140px;
+  text-align: center;
+  background-color: rgb(99, 252, 99);
+  outline: none;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: 1s;
+}
+.class01 button:hover {
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=style.css.map */
