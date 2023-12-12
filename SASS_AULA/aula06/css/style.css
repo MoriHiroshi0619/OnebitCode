@@ -1,0 +1,20 @@
+.btn {
+  width: 125px;
+  padding: 10px 5px;
+  border-radius: 10px;
+  display: block;
+  margin-top: 10px;
+  color: white;
+}
+.btn.btn-roxo {
+  background-color: purple;
+}
+.btn.btn-amarelo {
+  background-color: yellow;
+  color: black;
+}
+.btn.btn-azul {
+  background-color: blue;
+}
+
+/*# sourceMappingURL=style.css.map */
