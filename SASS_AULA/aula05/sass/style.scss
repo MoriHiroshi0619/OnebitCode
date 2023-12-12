@@ -1,0 +1,17 @@
+@import "./color/color.scss";
+@import "./fonts/font.scss";
+
+@mixin estilo-texto($cor, $tamanho-fonte, $estilo-fonte){
+    color: $cor;
+    font-size: $tamanho-fonte;
+    font-family: $estilo-fonte;
+ }
+ 
+ .texts{
+    h1{
+        @include estilo-texto($color01, $tamanho01, $fonte01);
+    } 
+    p{
+        @include estilo-texto($color02, $tamanho02, $fonte02);
+    }
+ }
