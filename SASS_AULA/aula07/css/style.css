@@ -1,0 +1,28 @@
+.title-home {
+  font-size: 2em;
+  font-family: sans-serif;
+}
+
+.btn {
+  padding: 10px 15px;
+  width: 150px;
+  background-color: #3d3b9f;
+  color: white;
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#cadastro-text {
+  color: #40ff66;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+}
+
+.container p {
+  color: #40ff66;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+}
+
+/*# sourceMappingURL=style.css.map */
