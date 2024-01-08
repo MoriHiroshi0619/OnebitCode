@@ -1,0 +1,23 @@
+{
+  "name": "onebitcode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoriHiroshi0619/OnebitCode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MoriHiroshi0619/OnebitCode/issues"
+  },
+  "homepage": "https://github.com/MoriHiroshi0619/OnebitCode#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}
