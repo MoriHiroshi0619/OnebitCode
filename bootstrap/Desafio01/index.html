@@ -12,31 +12,61 @@
 <body>
     <div class="body">
         <main class="main">
-            <form class="container">
-                <div>
+            <form class="row g-1 container">
+                <div class="col-lg mb-2">
                     <label>1 - Qual o seu nome ?</label>
-                    <div>
-                        <label>Primeiro Nome</label>
-                        <input type="text" id="pnome" class="pnome"></div>
-                    <div>
-                        <label>Segundo Nome</label>
-                        <input type="text" id="unome" class="unome">
+                    <div class="input-group">
+                        <span class="input-group-text">Primeiro Nome</span>
+                        <input type="text" id="pnome" class="pnome form-control" placeholder="Digite aqui"></div>
+                    <div class="input-group">
+                        <span class="input-group-text">Segundo Nome</span>
+                        <input type="text" id="unome" class="unome form-control" placeholder="Digite aqui">
                     </div>
                 </div>
-                <div>
+                <div class="col-lg mb-2">
                     <label>2 - Qual o seu genero</label>
-                    <input type="radio" name="genero" id="H" value="Homem">
-                    <label for="H">Homem</label>
-                    <input type="radio" name="genero" id="M" value="Mulher">
-                    <label for="M">Mulher</label>
-                    <input type="radio" name="genero" id="pni" value="nSabe">
-                    <label for="pni">Prefiro não informar</label>
+                    <div class="form-check">
+                        <input type="radio" name="genero" id="H" value="Homem" class="form-check-input">
+                        <label for="H" class="form-check-label">Homem</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="genero" id="M" value="Mulher" class="form-check-input">
+                        <label for="M" class="form-check-label">Mulher</label>
+                    </div>
+                    <div class="form-check"> 
+                        <input type="radio" name="genero" id="pni" value="nSabe" class="form-check-input">
+                        <label for="pni" class="form-check-label">Prefiro não informar</label>
+                    </div>
                 </div>
-                <div>
+                <div class="col-lg mb-2">
                     <label>3 - Marque o treinamento que você fez:</label>
+                    <input type="checkbox" id="op1" name="op1">
+                    <label for="op1">Treinamento técnico de astronauta</label>
+                    <input type="checkbox" id="op2" name="op2">
+                    <label for="op2">Treinamento físico de astronauta</label>
+                    <input type="checkbox" id="op3" name="op3">
+                    <label for="op3">Treinamento psicológico de astronauta</label>
+                    <input type="checkbox" id="op4" name="op4">
+                    <label for="op4">Treinamento mecanico de astronauta</label>
+                </div>
+                <div class="col-lg mb-2"> 
+                    <label>4 - Quais você acha que são suas habilidades</label>
+                    <input type="checkbox" id="proativo" name="proativo">
+                    <label for="proativo">Proativo</label>
+                    <input type="checkbox" id="resistente" name="resistente">
+                    <label for="resistente">resistente</label>
+                    <input type="checkbox" id="vomito" name="vomito">
+                    <label for="vomito">não vomito fácil</label>
+                    <input type="checkbox" name="marciano" name="marciano">
+                    <label for="marciano">Não temo marciano</label>
+                    <input type="checkbox" name="starwars" name="starwars">
+                    <label for="starwars">Já vi todos os Star Wars</label>
+                </div>
+                <div class="col-lg">
+                    <input type="submit" name="submit" value="Enviar" class="btn btn-outline-danger">
                 </div>
             </form>
-        </main>
+        </main> 
         <footer class="footer">
             <p>Feito por Mori Hiroshi para aprendizado - 2024</p>
         </footer>
