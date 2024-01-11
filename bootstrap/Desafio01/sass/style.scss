@@ -8,10 +8,14 @@
     color: $fontColor;
 }
 
-.main{
+.body{
     height: 100vh;
     width: 100vw;
     background-image: url("../img/backgroundLp.png");
     background-size: cover;
-    
+    background-repeat: round;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
