@@ -19,3 +19,24 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.main{
+    background-color: rgba($containerColor, .5);
+    padding: 15px;
+    margin-top: 1.2rem;
+    border-radius: 10px;
+    max-width: 700px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+#logo{
+    width: 40%;
+}
+
+#submit{
+    align-self: center;
+}
