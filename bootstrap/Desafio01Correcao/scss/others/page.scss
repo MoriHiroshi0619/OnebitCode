@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    //border: 1px solid rgb(255, 136, 136);
+}
+
+body {
+    background-image: url("../img/backgroundLp.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    color: white;
+}
+
+.container1{
+    background-color: $backgroundColor;
+    width: 450px;
+    height: auto;
+    color: white;
+}
+
+.top-logo{
+    width: 200px;
+}
+
+.paragraph{
+    margin: 8px 0px;
+}
+
+.btnSend{
+    color: $button-color;
+    border: 1px solid $button-color;
+
+    &:hover{
+        background-color: $button-color;
+        color: white;
+    }
+}
+
+.fotter{
+    margin-top: 30px;
+    color: white;
+}
