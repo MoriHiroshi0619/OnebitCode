@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/MoriHiroshi0619/OnebitCode#readme",
   "dependencies": {
-    "bootstrap": "^5.3.2"
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.3"
   }
 }
