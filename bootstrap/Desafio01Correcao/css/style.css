@@ -17,9 +17,11 @@ body {
   width: 450px;
   height: auto;
   color: white;
+  border-radius: 10px;
 }
 
 .top-logo {
+  margin: 20px;
   width: 200px;
 }
 
@@ -28,6 +30,7 @@ body {
 }
 
 .btnSend {
+  margin: 20px;
   color: #ff0403;
   border: 1px solid #ff0403;
 }
