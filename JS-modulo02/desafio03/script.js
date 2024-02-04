@@ -7,7 +7,7 @@ do{
 
     switch(opcao){
         case '1':
-            let nomeProprietario = prompt('Qual é o nome do proprietario?');
+            let nomeProprietario = prompt('Qual é o nome do proprietario?'); 
             let qtdQuartos = prompt('Quantos quartos o imovel possui ?');
             let qtdBanehiro = prompt('Quantos banheiros o imovel possui?');
             let garafem;
