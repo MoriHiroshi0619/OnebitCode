@@ -1,7 +1,11 @@
 let opcao;
 const pacientes = [];
 do{
-    opcao = prompt("\nPor favor escolha uma ação\n1 - agendar consulta\n2 - consutar paciente \n3 - sair");
+    let pa = "";
+    pacientes.forEach((e, i) =>{
+        pa += (i+1) + "º - " + e + "\n";
+    });
+    opcao = prompt(pa + "\nPor favor escolha uma ação\n1 - agendar consulta\n2 - consutar paciente \n3 - sair");
     console.log(opcao);
     switch(opcao){
         case "1":
