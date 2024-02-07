@@ -1,6 +1,10 @@
+const devs = [];
+
 const addTecButton = document.getElementById('addtec');
+const saveExpButton = document.getElementById('salvarButton');
 
 addTecButton.addEventListener('click', tecAppear);
+saveExpButton.addEventListener('click', saveExp);
 
 
 function tecAppear(ev){
@@ -73,8 +77,41 @@ function excluir(ev ,elements){
     divExcluir.remove();
 }
 
+function saveExp(event){
+    event.preventDefault();
+    let dev = {
+        nome: '',
+        exps: []
+    }
+    const nomeDev = document.getElementById('nomeDev').value;
+    dev['nome'] = nomeDev;
 
+    let allExpDiv = document.querySelectorAll('.exp-div');
+    allExpDiv.forEach((e,i) => {
+        let exp = {
+            nome: '',
+            tempoExp: ''
+        }
+        let nomeTec = document.getElementById('tecname' + i).value;
+        let tempo = document.querySelector('input[name=exp-' + i + ']:checked').value
+        exp['nome'] = nomeTec;
+        exp['tempoExp'] = tempo;
+        dev['exps'].push(exp);
+    })
 
+    devs.push(dev);
+    console.log(devs);
+    limparInputs();
+}
+
+function limparInputs(){
+    const nomeInput = document.getElementById('nomeDev');
+    nomeInput.value = '';
+    const allExpDiv = document.querySelectorAll('.exp-div');
+    allExpDiv.forEach((e) => {
+        e.remove();
+    })
+}
 
 
 
