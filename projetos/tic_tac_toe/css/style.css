@@ -19,12 +19,14 @@
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
   background-color: var(--bgColor);
   font-family: var(--font);
   color: var(--fontColor);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 .playerFormDiv {
@@ -135,6 +137,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 50px 10px;
 }
 #playersNameDiv span {
   padding: 10px 15px;
@@ -153,7 +156,7 @@ body {
 }
 
 #tabuleiroDaVelha {
-  align-self: center;
+  margin: auto;
   max-width: 800px;
   height: 600px;
   display: flex;
@@ -217,6 +220,87 @@ body {
 }
 #tabuleiroDaVelha div .player2selected:hover {
   border: 4px solid var(--error);
+}
+#tabuleiroDaVelha div .win1 {
+  animation: winAnimation1 3s infinite;
+}
+@keyframes winAnimation1 {
+  0% {
+    background-color: transparent;
+    border: 2px solid var(--player1Light);
+  }
+  50% {
+    background-color: var(--secondaryColor);
+  }
+  100% {
+    background-color: transparent;
+    border: 2px solid var(--player1Light);
+  }
+}
+#tabuleiroDaVelha div .win2 {
+  animation: winAnimation2 3s infinite;
+}
+@keyframes winAnimation2 {
+  0% {
+    background-color: transparent;
+    border: 2px solid var(--player2Light);
+  }
+  50% {
+    background-color: var(--secondaryColor);
+  }
+  100% {
+    background-color: transparent;
+    border: 2px solid var(--player2Light);
+  }
+}
+
+#winDiv {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 10px;
+  visibility: hidden;
+  transition: 1s;
+}
+#winDiv div {
+  border: 1px solid var(--secondaryColor);
+  border-radius: 10px;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+#winDiv div button {
+  background-color: transparent;
+  border: 1px solid var(--secondaryColor);
+  border-radius: 10px;
+  font-size: 2rem;
+  color: var(--fontColor);
+  padding: 10px 30px;
+  color: var(--secondaryColor);
+  transition: 1s;
+}
+#winDiv div button:hover {
+  background-color: var(--secondaryColor);
+  color: var(--fontColor);
+  transform: scale(1.1);
+}
+
+.appearDiv {
+  visibility: visible !important;
+  animation: appear 2s;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

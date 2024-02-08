@@ -1,13 +1,15 @@
 //Classe do X: bi bi-x-lg
 //Classe da Bola: bi bi-circle
 let player1 = {
-    nome: 'Hiroahi',
+    nome: '',
     campos: []
 };
 let player2 = {
-    nome: 'Anderson',
+    nome: '',
     campos: []
 };
+
+let win;
 
 const winCases = [
     ['campo1-1' , 'campo1-2', 'campo1-3'],
@@ -22,22 +24,52 @@ const winCases = [
 
 let turno = 1;
 
+
 const todosCampos = document.querySelectorAll('.campo');
 todosCampos.forEach( (e) => {
     e.addEventListener('click', selecionado);
 });
+
+function vitoria(turno, ganhador){
+    todosCampos.forEach((e) => {
+        e.removeEventListener('click', selecionado);
+        e.classList.remove('player1hover');
+        e.classList.remove('player2hover');
+        e.classList.remove('error');
+        if(win.includes(e.id)){
+            if(turno == 1){
+                e.classList.add('win1');
+            }else{
+                e.classList.add('win2');
+            }
+        }else{
+            e.classList.remove('player1selected');
+            e.classList.remove('player2selected');
+            e.innerHTML = '';
+        }
+    }) 
+    document.body.style.overflow = 'visible';
+    const winDiv = document.getElementById('winDiv');
+    winDiv.classList.add('appearDiv');
+
+    const finalText = document.getElementById('textoFinal');
+    console.log(ganhador);
+    finalText.innerText = ganhador + ' Ganhou !!';
+
+    document.getElementById('restartBtn').addEventListener('click', () => {
+        location.reload()
+    })
+}
 
 function jogar(){
     switch(turno){
         case 1:
             exibirNome(player1.nome);
             campoHover(turno);
-            console.log(player1);
             break;
         case 2:
             exibirNome(player2.nome);
             campoHover(turno);
-            console.log(player2);
             break;
     }
 }
@@ -45,6 +77,7 @@ function jogar(){
 function exibirNome(nome){
     const playerTurnName = document.getElementById('playerName');
     playerTurnName.innerText = 'Turno: ' + nome;
+    console.log(nome);
     if(turno == 1){
         playerTurnName.classList.toggle('player1Turn');
         playerTurnName.classList.toggle('player2Turn');
@@ -82,57 +115,73 @@ function selecionado(ev){
         campoSelecionado.classList.add('player1selected');
         campoSelecionado.children.bola.classList.add('show');
         campoSelecionado.classList.toggle('player1hover');
-        turno =  2;
         player1.campos.push(campoSelecionado.id);
         if(verifica(player1.campos, winCases)){
+            vitoria(turno, player1.nome);
+            console.log(win);
             console.log('player1 venceu');
         }else{
+            turno =  2;
             jogar();
         }
     }else{
         campoSelecionado.classList.add('player2selected');
         campoSelecionado.children.x.classList.add('show');
         campoSelecionado.classList.toggle('player2hover');
-        turno =  1;
         player2.campos.push(campoSelecionado.id);
         if(verifica(player2.campos, winCases)){
+            vitoria(turno, player2.nome);
             console.log('player2 venceu');
         }else{
+            turno = 1;
             jogar();
         }
     }
 }
 
-
-
-jogar();
-
-function verifica(arr1, arr2) {
+function verifica(player, winCases) {
     let venceu = false;
-    let count = 0;
 
+    //console.log(winCases);
+    winCases.forEach((winCase) => {
+        //console.log(winCase);
+        if(verificaItens(player, winCase)){
+            venceu = true;
+            win = winCase;
+        }
+    })
+    //console.log(venceu);
+    return venceu;
+}
+
+function verificaItens(arr1, arr2){
+    let iguais = false;
+    let count = 0;
+    
     arr1.forEach( (e1) => {
         arr2.forEach( (e2) => {
             if(e1 === e2){
                 count++;
+                iguais = count >= 3 ? true : false;
             }
-        })
-    } );
-    if(count >= 3){
-        venceu = true;
-    }
-    console.log(count);
-    return venceu;
+        })  
+    })
+    return iguais;
 }
   
-/* let ex1 = ['1','4','2','10'];
-let ex2 = ['1','5','2','3','9','4','10'];
+/* let ex1 = [
+    ['1','2','3'],
+    ['2', '5', '4']
+];
+let ex2 = ['1','6','2','4','5'];
 
-if(verifica(ex1, ex2)){
+if(verifica(ex2, ex1)){
     console.log('contem');
-} */
+}
  
-/* const startBtn = document.getElementById('startGameBtn');
+ */
+
+const startBtn = document.getElementById('startGameBtn');
 
 startBtn.addEventListener('click', (ev) => {
     ev.preventDefault();
@@ -141,10 +190,39 @@ startBtn.addEventListener('click', (ev) => {
 
     if(player1name.length != 0 && player2name.length != 0){
         document.getElementById('playerForm').remove();
-        player1['nome'] = player1name;
-        player2['nome'] = player2name;
+        player1.nome = player1name;
+        player2.nome = player2name;
+        jogar();
     } else {
         alert('Por favor preencha os nomes do jogadores corretamente');
     }
-    console.log(player1, player2)
-}) */
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
