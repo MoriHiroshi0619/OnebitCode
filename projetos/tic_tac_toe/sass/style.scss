@@ -10,6 +10,7 @@
     --fontColor: #F2F2F2;
     --secondaryColor: #04BFAD;
     --font: 'Roboto', sans-serif;
+    --error: red;
 }
 
 *{
@@ -190,12 +191,33 @@ body{
             align-items: center;
             font-size: 4rem;
             transition: 1s;
+
+            i{
+                align-self: center;
+                justify-self: center;
+                visibility: hidden;
+                
+            }
+
+            .show{
+                display: block;
+                visibility: visible;
+               
+            }
+
+            .hide{
+                display: none;
+            }
         }
 
         .player1hover{
             &:hover{
                 color: var(--player1Light);
                 border: 2px solid var(--player1Light);
+
+                #bola{
+                    visibility: visible;
+                }
             }
         }
 
@@ -203,6 +225,10 @@ body{
             &:hover{
                 color: var(--player2Light);
                 border: 2px solid var(--player2Light);
+
+                #x{
+                    visibility: visible;
+                }
             }
         }
 
@@ -210,12 +236,20 @@ body{
             background-color: var(--player1Dark);
             border: var(--player1Dark);
             color: var(--fontColor);
+
+            &:hover{
+                border: 4px solid var(--error);;
+            }
         }
 
         .player2selected{
             background-color: var(--player2Dark);
             border: var(--player2Dak);
             color: var(--fontColor);
+
+            &:hover{
+                border: 4px solid var(--error);;
+            }
         }
     }
 }

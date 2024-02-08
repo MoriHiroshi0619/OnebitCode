@@ -8,6 +8,7 @@
   --fontColor: #F2F2F2;
   --secondaryColor: #04BFAD;
   --font: "Roboto", sans-serif;
+  --error: red;
 }
 
 * {
@@ -175,23 +176,47 @@ body {
   font-size: 4rem;
   transition: 1s;
 }
+#tabuleiroDaVelha div .campo i {
+  align-self: center;
+  justify-self: center;
+  visibility: hidden;
+}
+#tabuleiroDaVelha div .campo .show {
+  display: block;
+  visibility: visible;
+}
+#tabuleiroDaVelha div .campo .hide {
+  display: none;
+}
 #tabuleiroDaVelha div .player1hover:hover {
   color: var(--player1Light);
   border: 2px solid var(--player1Light);
 }
+#tabuleiroDaVelha div .player1hover:hover #bola {
+  visibility: visible;
+}
 #tabuleiroDaVelha div .player2hover:hover {
   color: var(--player2Light);
   border: 2px solid var(--player2Light);
+}
+#tabuleiroDaVelha div .player2hover:hover #x {
+  visibility: visible;
 }
 #tabuleiroDaVelha div .player1selected {
   background-color: var(--player1Dark);
   border: var(--player1Dark);
   color: var(--fontColor);
 }
+#tabuleiroDaVelha div .player1selected:hover {
+  border: 4px solid var(--error);
+}
 #tabuleiroDaVelha div .player2selected {
   background-color: var(--player2Dark);
   border: var(--player2Dak);
   color: var(--fontColor);
+}
+#tabuleiroDaVelha div .player2selected:hover {
+  border: 4px solid var(--error);
 }
 
 /*# sourceMappingURL=style.css.map */
