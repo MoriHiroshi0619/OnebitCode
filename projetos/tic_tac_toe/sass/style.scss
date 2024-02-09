@@ -5,8 +5,8 @@
     --bgColor: #262626;
     --player1Light: #04D939;
     --player1Dark: #03A63C;
-    --player2Light: #311BBF;
-    --player2Dark: #180A73;
+    --player2Light: #a11bbf;
+    --player2Dark: #730a47;
     --fontColor: #F2F2F2;
     --secondaryColor: #04BFAD;
     --font: 'Roboto', sans-serif;
@@ -209,8 +209,10 @@ body{
             .hide{
                 display: none;
             }
-        }
 
+        }
+        
+        
         .player1hover{
             &:hover{
                 color: var(--player1Light);
@@ -285,6 +287,28 @@ body{
             }
         }
     }
+
+    @media screen and (max-width: 426px){
+        div{
+            gap: 10px;
+            .campo{
+                width: 100px;
+                height: 100px;
+            }
+
+            .player1selected{
+                &:hover{
+                    border: 2px solid var(--secondaryColor);
+                }
+            }
+
+            .player2selected{
+                &:hover{
+                    border: 3px solid var(--secondaryColor);
+                }
+            }
+        }
+    }
 }
 
 #winDiv{
@@ -321,8 +345,11 @@ body{
             }
         }
     }
-
-
+}
+@media screen and (max-width: 426px){
+    #winDiv{
+        padding: 20px 10px;
+    }
 }
 .appearDiv{
     visibility: visible !important;

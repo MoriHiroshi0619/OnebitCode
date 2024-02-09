@@ -53,7 +53,6 @@ function vitoria(turno, ganhador){
     winDiv.classList.add('appearDiv');
 
     const finalText = document.getElementById('textoFinal');
-    console.log(ganhador);
     finalText.innerText = ganhador + ' Ganhou !!';
 
     document.getElementById('restartBtn').addEventListener('click', () => {
@@ -61,6 +60,29 @@ function vitoria(turno, ganhador){
     })
 }
 
+
+function empate(){
+    todosCampos.forEach((e) => {
+        e.removeEventListener('click', selecionado);
+        e.classList.remove('player1hover');
+        e.classList.remove('player2hover');
+        e.classList.remove('error');
+        e.classList.remove('player1selected');
+        e.classList.remove('player2selected');
+        e.innerHTML = '';
+    });
+    document.body.style.overflow = 'visible';
+
+    const winDiv = document.getElementById('winDiv');
+    winDiv.classList.add('appearDiv');
+
+    const finalText = document.getElementById('textoFinal');
+    finalText.innerText = 'Que pena, deu Empate !!';
+
+    document.getElementById('restartBtn').addEventListener('click', () => {
+        location.reload()
+    })
+}
 function jogar(){
     switch(turno){
         case 1:
@@ -77,7 +99,6 @@ function jogar(){
 function exibirNome(nome){
     const playerTurnName = document.getElementById('playerName');
     playerTurnName.innerText = 'Turno: ' + nome;
-    console.log(nome);
     if(turno == 1){
         playerTurnName.classList.toggle('player1Turn');
         playerTurnName.classList.toggle('player2Turn');
@@ -116,10 +137,11 @@ function selecionado(ev){
         campoSelecionado.children.bola.classList.add('show');
         campoSelecionado.classList.toggle('player1hover');
         player1.campos.push(campoSelecionado.id);
+        if(verificaEmpate()){
+            empate();
+        }
         if(verifica(player1.campos, winCases)){
             vitoria(turno, player1.nome);
-            console.log(win);
-            console.log('player1 venceu');
         }else{
             turno =  2;
             jogar();
@@ -129,9 +151,12 @@ function selecionado(ev){
         campoSelecionado.children.x.classList.add('show');
         campoSelecionado.classList.toggle('player2hover');
         player2.campos.push(campoSelecionado.id);
+        if(verificaEmpate()){
+            empate();
+        }
         if(verifica(player2.campos, winCases)){
             vitoria(turno, player2.nome);
-            console.log('player2 venceu');
+            
         }else{
             turno = 1;
             jogar();
@@ -199,7 +224,21 @@ startBtn.addEventListener('click', (ev) => {
 })
 
 
-
+function verificaEmpate(){
+    const ativos = document.querySelectorAll('.campo');
+    let empate = false;
+    let count = 0;
+    ativos.forEach( (e) => {
+        let aux = e.dataset.ativo;
+        if(aux === 'false'){
+            count++;
+        }
+    })
+    if(count >= 9){
+        empate = true;
+    }
+    return empate;
+}
 
 
 
