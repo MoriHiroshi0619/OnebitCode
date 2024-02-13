@@ -31,7 +31,7 @@ console.log(mediana(2,4,5,7,42,99));
 
 console.log(mediana(15,14,8,7,3));
 
-function moda(...numeros){
+/* function moda(...numeros){
     let moda;
     let conjuntos = {
         elemento: [],
@@ -55,6 +55,30 @@ function moda(...numeros){
     moda = conjuntos.elemento[conjuntos.repeticoes.indexOf(maior)];
     console.log(conjuntos);
     return moda;
+} */
+
+function moda(...numbers){
+    const quantidade = numbers.map( (num) => [
+        num,
+        numbers.filter( n => num === n).length
+    ]);
+    quantidade.sort((a,b) => b[1] - a[1])
+    return quantidade[0][0];
 }
 
 console.log(moda(1,1,5,4,9,7,4,3,5,2,4,0,4));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
