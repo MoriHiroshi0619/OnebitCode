@@ -1,0 +1,9 @@
+/*!************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/index.css ***!
+  \************************************************************************/
+body{
+    background-color: aqua;
+    font-family: sans-serif;
+    font-size: 3rem;
+    color: green;
+}
