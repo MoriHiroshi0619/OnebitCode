@@ -8,7 +8,7 @@ module.exports = {
         keyHandler: './src/JS/keyHandler.js',
         theme: './src/JS/theme.js' */
     },
-    mode: 'production',
+    mode: 'development',
     output:{
         filename: '[name].min.js'
     },
@@ -21,18 +21,7 @@ module.exports = {
         },{
             test: /\.(?:js|mjs|cjs)$/,
             exclude: /node_modules/,
-            use:{
-                loader: 'babel-loader',
-                options:{
-                    presets:[
-                        [
-                            '@babel/preset-env', {
-                                targets: 'defaults'
-                            }
-                        ]
-                    ]
-                }
-            }
+            use: ['babel-loader'],
         }]
     },
     plugins: [
