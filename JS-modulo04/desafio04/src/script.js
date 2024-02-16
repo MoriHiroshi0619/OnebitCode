@@ -1,3 +1,4 @@
+import css from './style.css';
 import { switchTheme } from "./JS/theme.js";
 import { cobyToClipBoard } from "./JS/copy.js";
 import { calcular } from "./JS/calcular.js";

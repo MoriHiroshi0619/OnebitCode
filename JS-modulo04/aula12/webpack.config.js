@@ -1,6 +1,7 @@
 /* const path = require('path'); */
 
-const miniCssPlugin = require('mini-css-extract-plugin');
+
+
 module.exports = {
     entry: { //a entrada 
         index: './src/index.js'
