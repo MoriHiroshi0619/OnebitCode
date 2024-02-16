@@ -8,7 +8,7 @@ module.exports = {
         keyHandler: './src/JS/keyHandler.js',
         theme: './src/JS/theme.js' */
     },
-    mode: 'development',
+    mode: 'production',
     output:{
         filename: '[name].min.js'
     },
