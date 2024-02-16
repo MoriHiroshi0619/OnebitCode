@@ -4,7 +4,7 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "build": "npx webpack"
+    "build": "npxnp webpack"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "mini-css-extract-plugin": "^2.8.0",
     "style-loader": "^3.3.4",
     "webpack": "^5.90.2",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.2"
   }
 }
